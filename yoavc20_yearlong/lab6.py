@@ -14,31 +14,56 @@ class Square(Turtle):
 		self.shapesize(size)
 		self.shape("square")
 	def change_color(self):
-#		self.random_color = random_color
+
 		R = random.randint(0, 255)
 		B = random.randint(0, 255)
 		G = random.randint(0, 255)
 		self.color(R, B, G)	
-		#turtle.color(R, B, G)
-
-	'''
-	def pick_color():
-		self.random_color = random_color	
-		return choice(["red", "yellow", "blue"])
-'''
-#print(random.random())
+		
 square1 = Square(25)
 square1.change_color()
 
 
 
 
-'''
+
 class Hexagon(Turtle):
 	def __init__(self,size):
 		Turtle. __init__(self)
-		self.size(size)
-'''
+		#self.size(size)
+		turtle.home()
+		turtle.penup()
+		turtle.hideturtle()
+		turtle.begin_poly()
+		turtle.fd(size)
+		turtle.left(60)
+		turtle.fd(size)
+		turtle.left(60)		
+		turtle.fd(size)
+		turtle.left(60)		
+		turtle.fd(size)
+		turtle.left(60)		
+		turtle.fd(size)
+		turtle.left(60)
+		turtle.fd(size)
+		turtle.end_poly()
+		p = turtle.get_poly()
+		turtle.register_shape("Hexagon" , p)
+		self.penup()
+		self.shape("Hexagon")
+
+	def jump(self):
+		self.left(90)
+		self.fd(100)
+
+a = Hexagon(20)
+a.jump()
+
+
+
+
+
+
 
 
 
