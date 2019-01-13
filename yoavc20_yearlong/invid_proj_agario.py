@@ -5,10 +5,10 @@ import math
 turtle.penup()
 class Ball(Turtle):
 	def __init__(self, x, y, dx, dy, r, color ): # r = radius
-		#self.turtle = turtle.Turtle()
-		Turtle.__init__(self)
+		self.turtle = turtle.Turtle()
+		#Turtle.__init__(self)
 		self.shape("circle")
-		self.shapesize(r/10)
+		self.shapesize(radius/10)
 		self.r = r 
 		self.color(color)
 		#self.speed(speed)
@@ -17,13 +17,13 @@ class Ball(Turtle):
 		self.dy = dy
 	def move(self, screen_width, screen_height):
 		current_x = self.xcor()
-		new_x = current_x + self.dx
+		new_x = current_x + dx
 		current_y= self.ycor()
-		new_y = current_y + self.dy
-		right_side_ball = new_x + self.r
-		left_side_ball = new_x - self.r
-		upper_side_ball = new_y + self.r
-		down_side_ball = new_y - self.r
+		new_y = current_y + dy
+		right_side_ball = new_x + r
+		left_side_ball = new_x - r
+		upper_side_ball = new_y + r
+		down_side_ball = new_y - r
 		if new_x >= screen_width or new_x <= -screen_width:
 			self.dx=-self.dx
 			new_x=current_x+self.dx
@@ -35,11 +35,11 @@ class Ball(Turtle):
 ball = Ball(0,0 ,5, 5 , 100, "red")
 ball.move(100,100)
 
-#while True:
-#	ball1.move(300,300)
-#	ball2.move(300,300)
+while True:
+	ball1.move(300,300)
+	ball2.move(300,300)
 
 
 
 
-turtle.mainloop()
+#turtle.mainloop()

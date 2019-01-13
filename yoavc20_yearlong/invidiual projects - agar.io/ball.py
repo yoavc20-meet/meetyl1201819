@@ -1,14 +1,17 @@
 import turtle 
-# from turtle import Turtle
+from turtle import Turtle
 import random
 import math
 import time
 
 
 turtle.penup()
-class Ball():
+
+class Ball(turtle.Turtle):
 	def __init__(self, x, y, dx, dy, r, color ): # r = radius
 		#self.turtle = turtle.Turtle()
+		turtle.Turtle.__init__(self)
+		turtle.pu()
 		self.my_turtle = turtle.clone()
 		#Turtle.__init__(self)
 		self.my_turtle.shape("circle")
@@ -21,6 +24,7 @@ class Ball():
 		self.dx = dx
 		self.dy = dy
 	def move(self, screen_width, screen_height):
+		turtle.pu()
 		current_x = self.my_turtle.xcor()
 		new_x = current_x + self.dx
 		current_y= self.my_turtle.ycor()
@@ -37,7 +41,9 @@ class Ball():
 			new_y=current_y+self.dy
 		self.my_turtle.goto(new_x, new_y)
 
-#ball = Ball(0,0 ,5, 5 , 100, "red")
+# ball = Ball(0,0 ,5, 5 , 100, "red")
+
+# turtle.mainloop()
 #ball.move(100,100)
 
 #while True:
