@@ -11,23 +11,23 @@ class Ball(turtle.Turtle):
 	def __init__(self, x, y, dx, dy, r, color ): # r = radius
 		#self.turtle = turtle.Turtle()
 		turtle.Turtle.__init__(self)
-		turtle.pu()
-		self.my_turtle = turtle.clone()
+		self.pu()
+		#self.my_turtle = turtle.clone()
 		#Turtle.__init__(self)
-		self.my_turtle.shape("circle")
-		self.my_turtle.shapesize(r/10)
+		self.shape("circle")
+		self.shapesize(r/10)
 		self.r = r 
-		self.my_turtle.color(color)
-		self.my_turtle.showturtle()
+		self.color(color)
+		self.showturtle()
 		#self.speed(speed)
-		self.my_turtle.goto(x,y)
+		self.goto(x,y)
 		self.dx = dx
 		self.dy = dy
 	def move(self, screen_width, screen_height):
 		turtle.pu()
-		current_x = self.my_turtle.xcor()
+		current_x = self.xcor()
 		new_x = current_x + self.dx
-		current_y= self.my_turtle.ycor()
+		current_y= self.ycor()
 		new_y = current_y + self.dy
 		right_side_ball = new_x + self.r
 		left_side_ball = new_x - self.r
@@ -39,7 +39,7 @@ class Ball(turtle.Turtle):
 		if new_y >= screen_height or new_y <= -screen_height:
 			self.dy=-self.dy
 			new_y=current_y+self.dy
-		self.my_turtle.goto(new_x, new_y)
+		self.goto(new_x, new_y)
 
 # ball = Ball(0,0 ,5, 5 , 100, "red")
 
